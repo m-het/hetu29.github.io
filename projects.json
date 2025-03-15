@@ -1,0 +1,195 @@
+{
+    "projects": [
+        {
+            "id": "portfolio-website",
+            "title": "Modern Portfolio Website",
+            "description": "A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features include dynamic theme switching, custom cursor animations, smooth scrolling, and interactive project filtering with GSAP animations.",
+            "image": "assets/images/portfolio.jpg",
+            "tags": ["HTML5", "CSS3", "JavaScript", "GSAP", "Responsive Design", "Animation"],
+            "liveUrl": "https://your-portfolio-url.com",
+            "githubUrl": "https://github.com/yourusername/portfolio",
+            "featured": true,
+            "technologies": {
+                "frontend": ["HTML5", "CSS3", "JavaScript", "GSAP"],
+                "tools": ["Git", "VS Code", "Figma"],
+                "deployment": ["Netlify", "GitHub Pages"]
+            },
+            "highlights": [
+                "Custom cursor implementation with interactive animations",
+                "Dynamic dark/light theme switcher with smooth transitions",
+                "Responsive design with mobile-first approach",
+                "SVG illustrations with hover animations",
+                "Project filtering system with GSAP animations",
+                "Optimized performance with lazy loading"
+            ],
+            "category": "Web Development",
+            "date": "2024-03"
+        },
+        {
+            "id": "ai-image-generator",
+            "title": "AI Image Generator",
+            "description": "A full-stack application that generates unique images using AI. Built with React and Node.js, integrating with OpenAI's DALL-E API for image generation. Features real-time preview and advanced filtering options.",
+            "image": "assets/images/ai-generator.jpg",
+            "tags": ["React", "Node.js", "OpenAI", "MongoDB", "Express", "TailwindCSS"],
+            "liveUrl": "https://ai-image-gen.com",
+            "githubUrl": "https://github.com/yourusername/ai-image-gen",
+            "featured": true,
+            "technologies": {
+                "frontend": ["React", "TailwindCSS", "Redux", "React Query"],
+                "backend": ["Node.js", "Express", "OpenAI API"],
+                "database": ["MongoDB", "Redis"],
+                "deployment": ["AWS", "Docker", "Kubernetes"]
+            },
+            "highlights": [
+                "Real-time image generation using DALL-E API",
+                "Advanced image manipulation and editing features",
+                "User authentication with JWT and OAuth",
+                "Image sharing and community features",
+                "Responsive gallery with infinite scroll",
+                "Performance optimization with Redis caching"
+            ],
+            "category": "Full Stack",
+            "date": "2024-02"
+        },
+        {
+            "id": "task-management-app",
+            "title": "Task Management Application",
+            "description": "A comprehensive task management solution with real-time updates, team collaboration features, and progress tracking capabilities. Built with Vue.js and Firebase for seamless real-time synchronization.",
+            "image": "assets/images/task-app.jpg",
+            "tags": ["Vue.js", "Firebase", "Real-time", "PWA", "TypeScript"],
+            "liveUrl": "https://task-master-app.com",
+            "githubUrl": "https://github.com/yourusername/task-master",
+            "featured": false,
+            "technologies": {
+                "frontend": ["Vue.js", "Vuex", "SCSS", "TypeScript"],
+                "backend": ["Firebase", "Cloud Functions"],
+                "tools": ["Jest", "Cypress", "GitHub Actions"],
+                "deployment": ["Firebase Hosting", "Cloud Run"]
+            },
+            "highlights": [
+                "Real-time task updates and collaboration",
+                "Progressive Web App with offline support",
+                "Advanced task filtering and sorting",
+                "Team management and role-based access",
+                "Automated testing with Jest and Cypress",
+                "CI/CD pipeline with GitHub Actions"
+            ],
+            "category": "Web Development",
+            "date": "2024-01"
+        },
+        {
+            "id": "mobile-fitness-tracker",
+            "title": "Mobile Fitness Tracker",
+            "description": "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress with social features and AI-powered recommendations. Built with React Native and TensorFlow Lite.",
+            "image": "assets/images/fitness-app.jpg",
+            "tags": ["React Native", "TypeScript", "Firebase", "Machine Learning", "TensorFlow"],
+            "liveUrl": "https://fittrack-mobile.com",
+            "githubUrl": "https://github.com/yourusername/fit-track",
+            "featured": true,
+            "technologies": {
+                "frontend": ["React Native", "TypeScript", "Redux Toolkit", "React Query"],
+                "backend": ["Firebase", "TensorFlow Lite", "Cloud Functions"],
+                "tools": ["Expo", "Jest", "Detox"],
+                "deployment": ["App Store", "Google Play"]
+            },
+            "highlights": [
+                "Cross-platform compatibility (iOS & Android)",
+                "AI-powered workout recommendations",
+                "Real-time progress tracking and analytics",
+                "Social features and community challenges",
+                "Offline workout tracking with sync",
+                "Advanced E2E testing with Detox"
+            ],
+            "category": "Mobile Development",
+            "date": "2023-12"
+        },
+        {
+            "id": "sentiment-analysis-dashboard",
+            "title": "Sentiment Analysis Dashboard",
+            "description": "An advanced machine learning application that analyzes social media sentiment in real-time. Features include trend analysis, automated reporting, and predictive analytics using Python and TensorFlow.",
+            "image": "assets/images/sentiment-dashboard.jpg",
+            "tags": ["Python", "TensorFlow", "NLP", "React", "FastAPI"],
+            "liveUrl": "https://sentiment-dashboard.com",
+            "githubUrl": "https://github.com/yourusername/sentiment-analysis",
+            "featured": true,
+            "technologies": {
+                "frontend": ["React", "D3.js", "Material-UI"],
+                "backend": ["Python", "FastAPI", "TensorFlow"],
+                "database": ["PostgreSQL", "TimescaleDB"],
+                "deployment": ["GCP", "Docker"]
+            },
+            "highlights": [
+                "Real-time sentiment analysis using BERT",
+                "Interactive data visualization with D3.js",
+                "Automated report generation",
+                "Scalable architecture with microservices",
+                "Advanced time-series analysis",
+                "Custom ML model training pipeline"
+            ],
+            "category": "Machine Learning",
+            "date": "2024-01"
+        }
+    ],
+    "categories": [
+        "Web Development",
+        "Full Stack",
+        "Mobile Development",
+        "UI/UX Design",
+        "Machine Learning"
+    ],
+    "skills": {
+        "frontend": {
+            "HTML5": 95,
+            "CSS3": 90,
+            "JavaScript": 85,
+            "React": 80,
+            "Vue.js": 75,
+            "TypeScript": 70,
+            "React Native": 65,
+            "D3.js": 60
+        },
+        "backend": {
+            "Node.js": 80,
+            "Express": 75,
+            "Firebase": 70,
+            "MongoDB": 65,
+            "REST APIs": 85,
+            "GraphQL": 60,
+            "Python": 75,
+            "FastAPI": 65
+        },
+        "tools": {
+            "Git": 90,
+            "VS Code": 95,
+            "Figma": 80,
+            "Docker": 65,
+            "Jest": 70,
+            "AWS": 60,
+            "GCP": 55,
+            "Kubernetes": 50
+        },
+        "design": {
+            "UI Design": 85,
+            "UX Design": 80,
+            "Responsive Design": 90,
+            "Animation": 75,
+            "Prototyping": 70
+        },
+        "machine_learning": {
+            "TensorFlow": 70,
+            "NLP": 65,
+            "Data Analysis": 75,
+            "Python ML": 70,
+            "Deep Learning": 60
+        }
+    },
+    "metadata": {
+        "lastUpdated": "2024-03-20",
+        "totalProjects": 5,
+        "author": "Your Name",
+        "website": "https://your-portfolio-url.com",
+        "github": "https://github.com/yourusername",
+        "linkedin": "https://linkedin.com/in/yourusername",
+        "email": "contact@your-portfolio-url.com"
+    }
+} 

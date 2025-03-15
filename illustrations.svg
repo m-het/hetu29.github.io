@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- Developer Character -->
+    <symbol id="developer-illustration" viewBox="0 0 400 400">
+        <path class="body" d="M200,150 Q190,150 180,160 L160,200 Q150,220 150,240 L150,300" 
+              fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round"/>
+        <path class="legs" d="M150,300 Q160,310 170,320 L190,340" 
+              fill="none" stroke="currentColor" stroke-width="35" stroke-linecap="round"/>
+        <path class="laptop" d="M220,200 L280,200 L290,220 L210,220 Z" 
+              fill="currentColor"/>
+        <circle class="head" cx="200" cy="120" r="35" fill="currentColor"/>
+    </symbol>
+
+    <!-- Designer Character -->
+    <symbol id="designer-illustration" viewBox="0 0 400 400">
+        <path class="body" d="M180,150 Q200,180 200,220 L200,280" 
+              fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round"/>
+        <path class="arm" d="M200,200 Q220,190 240,200 L270,220" 
+              fill="none" stroke="currentColor" stroke-width="25" stroke-linecap="round"/>
+        <circle class="head" cx="180" cy="120" r="35" fill="currentColor"/>
+        <path class="palette" d="M270,220 A20,20 0 1,1 290,200" 
+              fill="var(--accent-color)"/>
+    </symbol>
+
+    <!-- Creative Character -->
+    <symbol id="creative-illustration" viewBox="0 0 400 400">
+        <path class="body" d="M200,150 Q220,170 220,200 L220,280" 
+              fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round"/>
+        <path class="arm" d="M220,200 Q240,180 260,190 L290,210" 
+              fill="none" stroke="currentColor" stroke-width="25" stroke-linecap="round"/>
+        <circle class="head" cx="200" cy="120" r="35" fill="currentColor"/>
+        <path class="idea" d="M290,150 L310,130 M280,140 L290,130 M300,160 L310,170" 
+              stroke="var(--primary-color)" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Abstract Shapes -->
+    <symbol id="abstract-shape-1" viewBox="0 0 200 200">
+        <path d="M20,20 Q100,0 180,20 Q200,100 180,180 Q100,200 20,180 Q0,100 20,20" 
+              fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="abstract-shape-2" viewBox="0 0 200 200">
+        <path d="M100,10 L180,50 L180,150 L100,190 L20,150 L20,50 Z" 
+              fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+</svg> 
