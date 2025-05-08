@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editable Flashcards</title>
+  <style>
+    /* Background Shapes */
+    body { margin: 0; overflow: hidden; background-color: #000; }
+    .background-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      overflow: hidden; z-index: -1;
+    }
+    .shape {
+      position: absolute; border-radius: 50%;
+      filter: blur(60px); opacity: 0.7;
+      animation: float 25s infinite linear;
+    }
+    @keyframes float {
+      0%,100% { transform: translate(0,0); }
+      25%     { transform: translate(100%,50%); }
+      50%     { transform: translate(50%,100%); }
+      75%     { transform: translate(-50%,75%); }
+    }
+
+    /* Flashcards Layout */
+    * { box-sizing: border-box; }
+    body {
+      display: flex; flex-direction: column;
+      align-items: center; padding-top: 2rem;
+      font-family: sans-serif; color: #fff;
+    }
+    #flashcards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; width: 90%; max-width: 1000px;
+      margin-bottom: 1rem;
+    }
+    .flashcard {
+      background: #222; color: #fff;
+      padding: 1rem; border-radius: 0.5rem;
+      position: relative; min-height: 100px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .card-text {
+      outline: none;
+      width: 100%; height: 100%;
+    }
+    .delete-card {
+      position: absolute; top: 8px; right: 8px;
+      background: #e74c3c; color: #fff;
+      border: none; border-radius: 50%;
+      width: 24px; height: 24px;
+      cursor: pointer;
+    }
+    .delete-card:hover { opacity: 0.8; }
+    #add-card {
+      padding: 0.5rem 1rem; font-size: 1rem;
+      border: none; border-radius: 0.5rem;
+      background: #3498db; color: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    #add-card:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div id="background" class="background-container"></div>
+
+  <div id="flashcards-container"></div>
+  <button id="add-card">Add Card</button>
+
+  <script>
+    // Background shapes generation
+    const colors = [
+      'rgba(216,226,220,0.2)',
+      'rgba(75,0,130,0.2)',
+      'rgba(0,128,128,0.2)',
+      'rgba(95,158,160,0.2)'
+    ];
+    function createShape() {
+      const shape = document.createElement('div');
+      shape.className = 'shape';
+      const size = Math.random() * 400 + 200;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      shape.style.width = `${size}px`;
+      shape.style.height = `${size}px`;
+      shape.style.background = `radial-gradient(${color}, transparent)`;
+      shape.style.left = `${Math.random() * 100}%`;
+      shape.style.top = `${Math.random() * 100}%`;
+      shape.style.animation = `float ${25 + Math.random() * 15}s infinite cubic-bezier(0.4,0,0.2,1)`;
+      return shape;
+    }
+    const bgContainer = document.getElementById('background');
+    function initBackground() {
+      bgContainer.innerHTML = '';
+      for (let i = 0; i < 8; i++) {
+        bgContainer.appendChild(createShape());
+      }
+    }
+    window.addEventListener('resize', initBackground);
+    initBackground();
+
+    // Flashcards functionality
+    const container = document.getElementById('flashcards-container');
+    const addBtn = document.getElementById('add-card');
+    let flashcards = JSON.parse(localStorage.getItem('flashcards') || '[]');
+
+    function saveFlashcards() {
+      localStorage.setItem('flashcards', JSON.stringify(flashcards));
+    }
+
+    function createFlashcard(text, index) {
+      const card = document.createElement('div');
+      card.className = 'flashcard';
+
+      const cardText = document.createElement('div');
+      cardText.className = 'card-text';
+      cardText.contentEditable = 'true';
+      cardText.textContent = text;
+      card.appendChild(cardText);
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'delete-card';
+      deleteBtn.textContent = '✕';
+      card.appendChild(deleteBtn);
+
+      // Save text on blur
+      cardText.addEventListener('blur', () => {
+        flashcards[index] = cardText.textContent;
+        saveFlashcards();
+      });
+
+      // Delete card
+      deleteBtn.addEventListener('click', () => {
+        flashcards.splice(index, 1);
+        saveFlashcards();
+        renderFlashcards();
+      });
+
+      return card;
+    }
+
+    function renderFlashcards() {
+      container.innerHTML = '';
+      flashcards.forEach((text, i) => {
+        const card = createFlashcard(text, i);
+        container.appendChild(card);
+      });
+    }
+
+    addBtn.addEventListener('click', () => {
+      flashcards.push('New card');
+      saveFlashcards();
+      renderFlashcards();
+    });
+
+    // Initial render
+    renderFlashcards();
+  </script>
+</body>
+</html>
